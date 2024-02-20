@@ -5,7 +5,6 @@ const contains = (store, product) => {
 
     //Comprobamos si el store es un objeto
     if(typeof(store) === "object"){
-        console.log("objecto")
         //Si lo es, sacamos sus keys iteramos entre ellas
         const keys = Object.keys(store)
         keys.forEach(item => {
@@ -18,7 +17,6 @@ const contains = (store, product) => {
             }
             //Si es una cadena, comprobamos si es el producto
             else if(store[item] == product){
-                console.log("Encontrado = true")
                 encontrado = true
             }
         })
