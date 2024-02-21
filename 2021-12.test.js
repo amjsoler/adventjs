@@ -7,7 +7,6 @@ const getMinJump = (obstacles) => {
 
     //Creamos el camino que ha de seguir el trineo
     for(let i = 0; i<=obstacles[obstacles.length-1];i++){
-        console.log(obstacles)
         if(obstacles.includes(i)){
             fullPath.push("X")
         }else{

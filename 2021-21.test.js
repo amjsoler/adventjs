@@ -20,7 +20,6 @@ const canCarry = (capacity, trip) => {
         tripMatrix.push(partialTrip)
     }
 
-    console.log(tripMatrix)
     //Ahora con la matriz montada, recorro los viajes parciales a la vez, sumando el espacio gastado en cada uno y comprobando que no supere el total disponible
     for(let i=0;i<tripMatrix[0].length;i++){
         let spaceSpentStep = 0
