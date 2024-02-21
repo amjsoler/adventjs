@@ -3,20 +3,20 @@ import {test, expect} from 'vitest'
 const groupBy = (collection, it) =>  {
     let results = {}
 
-    for(let i=0; i<collection.length;i++){
-        let auxRes
-        if(typeof(it) === "function"){
-            auxRes = it(collection[i])
-        }
-        else {
-            auxRes = collection[i].it
+    for(let i=0;i<collection.length;i++){
+        let auxResult
+        if(typeof(it) === "function") {
+            auxResult = it(collection[i])
+        }else{
+            auxResult = collection[i][it]
         }
 
-        //Una vez haya procesado la i de la colección, la meto al results
-        if(typeof(results[auxRes]) === "undefined"){
-            results[auxRes] = []å
+        //Una vez haya procesado el elemento de array, busco en resultados si ya está agrupado
+        if(Object.keys(results).includes(auxResult.toString())){
+            results[auxResult.toString()].push(collection[i])
+        }else{
+            results[auxResult.toString()] = [collection[i]]
         }
-        results[auxRes].push(collection[i])
     }
 
     return results
